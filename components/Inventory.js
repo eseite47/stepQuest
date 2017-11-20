@@ -1,6 +1,5 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
-import Stats from './Stats'
 
 const styles = StyleSheet.create({
   container: {
@@ -25,7 +24,6 @@ export default class SettingsComponent extends React.Component {
       	<Image style={styles.Image} source={require('./../assets/stepquestTitle.png')} />
 				<View style={styles.Textfield}>
         	<Text>My Inventory of Stuff</Text>
-          <Stats />
         </View>
       </View>
     );

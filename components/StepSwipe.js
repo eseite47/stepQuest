@@ -6,9 +6,10 @@ import Stats from './Stats'
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
-		backgroundColor: 'pink',
-		alignItems: 'center',
+		flex: 5,
+		backgroundColor: '#cc9900',
+    alignItems: 'center',
+    //height: 400
 	}
 })
 
@@ -17,16 +18,19 @@ export default class SwiperComponent extends React.Component {
 
   render() {
     return (
+      <View style={styles.container}>
       <Swiper
+        height={240}
         loop={false}
         showsPagination={true}
         index={0}>
-        <View style={styles.container}>
+        <View>
           <Steps />
         </View>
-        <View style={styles.container}>
+        <View >
           <Stats />
         </View>
       </Swiper>
+      </View>
     )}
   }
