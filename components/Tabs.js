@@ -3,6 +3,7 @@ import { TabNavigator } from 'react-navigation'
 
 import Home from './Home'
 import Settings from './Settings'
+import Inventory from './Inventory'
 
 export const Tabs = TabNavigator({
   Home: {
@@ -22,5 +23,12 @@ export const Tabs = TabNavigator({
     navigationOptions: {
       tabBarLabel: 'Settings'
     }
+  },
+  Inventory: {
+    screen: Inventory,
+    navigationOptions: {
+      tabBarLabel: 'Inventory'
+    }
   }
+
 })
