@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { ActivityIndicator, View, StyleSheet, TextInput, Text, TouchableOpacity, Image, KeyboardAvoidingView, ScrollView } from 'react-native';
 import * as firebase from 'firebase';
 import { StackNavigator } from 'react-navigation';
-import SignUp from './SignUp'
 // import { connect } from 'react-redux';
 // import { StackNavigator } from 'react-navigation';
 // import LoginOldUser from './LoginOldUser'
 // import { loginUser } from '../reducers/login';
 
-class Login extends React.Component {
+export default class SignUp extends React.Component {
 
   constructor(props) {
     super(props)
@@ -84,16 +83,3 @@ const styles = {
 
 }
 
-
-export default LoginNavigator = StackNavigator({
-    Login: { screen: Login,
-      navigationOptions: {
-        header: null
-      }
-    },
-    SignUp: { screen: SignUp,
-      navigationOptions: {
-        header: null
-      }
-    }
-})

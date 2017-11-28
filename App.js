@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import { Tabs } from './components/Tabs'
 import store from './store.js'
+import config from './secrets'
+
+import { TabNavigator } from 'react-navigation'
 
 import * as firebase from 'firebase';
-import * as config from './secrets'
-firebase.initializeApp(config)
-const auth = firebase.auth()
 
 import Login from './components/Login';
 //import {setUser} from './reducers/login';
@@ -19,12 +19,16 @@ export default class App extends Component {
     }
   }
 
+  componentWillMount() {
+    // console.log(config)
+    firebase.initializeApp(config)
+  }
+
   componentDidMount() {
-    auth.onAuthStateChanged(user => {
+    firebase.auth().onAuthStateChanged(user => {
       if (user) {
         // User is signed in.
         console.log('user is logged in')
-
         this.setState({ user });
       } else {
         // No user is signed in.
