@@ -18,15 +18,20 @@ class Login extends React.Component {
       password: '',
     }
     this.onPressSignIn = this.onPressSignIn.bind(this)
+    this.onPressSwitch = this.onPressSwitch.bind(this)
   }
 
   onPressSignIn(navigate){
-    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
+    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
       // Handle Errors here.
      console.log(error)
       // ...
     });
     navigate('App')
+  }
+
+  onPressSwitch(navigate){
+    navigate('SignUp')
   }
 
   render() {
@@ -35,7 +40,7 @@ class Login extends React.Component {
     return (
       <View style={styles.containter}>
       <Text style= {styles.input}>
-      already a member?
+      Sign In
     </Text>
     <TextInput
       style= {styles.input}
@@ -55,6 +60,13 @@ class Login extends React.Component {
 
     <TouchableOpacity onPress={() => this.onPressSignIn(navigate)} >
     <Text style={styles.button}>Login</Text>
+      </TouchableOpacity>
+
+      <Text>
+        New Here?
+      </Text>
+      <TouchableOpacity onPress={() => this.onPressSwitch(navigate)} >
+      <Text>SignUp</Text>
       </TouchableOpacity>
       </View>
     );

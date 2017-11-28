@@ -28,13 +28,17 @@ export default class SignUp extends React.Component {
     navigate('App')
   }
 
+  onPressSwitch(navigate){
+    navigate('Login')
+  }
+
   render() {
     const { navigate } = this.props.navigation
 
     return (
       <View style={styles.containter}>
       <Text style= {styles.input}>
-      already a member?
+      New User Sign In?
     </Text>
     <TextInput
       style= {styles.input}
@@ -54,6 +58,13 @@ export default class SignUp extends React.Component {
 
     <TouchableOpacity onPress={() => this.onPressSignIn(navigate)} >
     <Text style={styles.button}>Login</Text>
+      </TouchableOpacity>
+
+      <Text>
+        Already have an account?
+      </Text>
+      <TouchableOpacity onPress={() => this.onPressSwitch(navigate)} >
+      <Text>Sign In</Text>
       </TouchableOpacity>
       </View>
     );
