@@ -1,9 +1,8 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
 import Avatar from './Avatar'
-// import Steps from './Steps'
-// import Stats from './Stats'
 import Swipe from './StepSwipe'
+import * as firebase from 'firebase';
 
 const styles = StyleSheet.create({
 	container: {
@@ -28,3 +27,4 @@ export default class HomeComponent extends React.Component {
 		);
 	}
 }
+

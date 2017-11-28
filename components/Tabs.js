@@ -1,9 +1,9 @@
 import React from 'react'
 import { TabNavigator } from 'react-navigation'
-
 import Home from './Home'
 import Settings from './Settings'
 import Inventory from './Inventory'
+
 
 export const Tabs = TabNavigator({
   Home: {
